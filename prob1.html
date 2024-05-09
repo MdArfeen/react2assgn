@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Component</title>
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Gallery({ children }) {
+      return (
+        <div className="gallery">
+          {children}
+        </div>
+      );
+    }
+
+    function Image({ src }) {
+      return (
+        <img src={src} alt="Gallery" style={{ maxWidth: '100%', height: 'auto' }} />
+      );
+    }
+
+    // Example usage
+    ReactDOM.render(
+      <Gallery>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-6eQyRA5D9fia4rMh9OxrDqE2kRBN1MdLbh5F1Wqg6A&s" />
+        <Image src="https://st2.depositphotos.com/1837549/7596/i/450/depositphotos_75968529-stock-photo-cristiano-ronaldo-of-real-madrid.jpg" />
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrGLRFE3za0IU1JisVpQmX-i6-qBRVF1HELrzxXmG7Gw&s" />
+        <Image src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/05/28/8ecd611c-8f81-4b7a-a99c-00b177aa3a69/SUAREZ_046-min.JPG"/>
+        <Image src="https://media.gettyimages.com/id/1420591520/photo/dortmund-germany-marco-reus-of-borussia-dortmund-celebrates-their-teams-first-goal-during-the.jpg?s=612x612&w=gi&k=20&c=NRSjyZzV_rgf4cZfin4NfEa33ndnT3XiGl0U9A3-8Fs="/>
+        <Image src="https://media.gettyimages.com/id/1423994709/photo/munich-germany-thomas-mueller-of-bayern-muenchen-reacts-during-the-uefa-champions-league.jpg?s=612x612&w=gi&k=20&c=pvVWi1OuaUgEnOoIHSjxTfiZJL1qqYhMvmETW0WqL4c="/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr7H-3qnR1acDGZdWMEY9_vM8WBNn7bKhBMqKSNJlVAQ&s"/>
+        <Image src="https://www.shutterstock.com/image-photo/kylian-mbappe-during-uefa-euro-260nw-2321551755.jpg"/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Cm5l4qKCHpv75kyV2iOaSapTXpE_bEJrQ2UIq7imXDRk1wdioTriGdQWBldq8zzl-RU&usqp=CAU"/>
+        <Image src="https://media.gettyimages.com/id/1459180913/photo/munich-germany-joshua-kimmich-of-bayern-celebrates-after-scoring-his-teams-first-goal-during.jpg?s=612x612&w=gi&k=20&c=S9gW_bqK86SShlVB3tdMFPqFoPaZ4ld1DF_vFMI2Gxg="/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9bmo8-R3TJh7v_crrx6O2-_B43O36q3ek7vamyRmBSg&s"/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfOCcB8BSmggjTS4Mp-R_jjh3NrUJ_u0DTmVTFMmEdbQ&s"/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVWfDXyMstM8g5KyDcyBTw1g2Slk29TahZ1IC9R9vskQ&s"/>
+        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPGgkOFhxqHrJkDsvKUrOTaVq8V_kGPXb3sQg5T4lTg&s"/>
+        {/* Additional images can be included as needed */}
+      </Gallery>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
